@@ -27,16 +27,17 @@ public class Xogo {
         } while (num1 < 1 || num1 > 50);
         numIntentos = Integer.parseInt(JOptionPane.showInputDialog("Introduce o numero de intentos."));
         do {
-                num2 = Integer.parseInt(JOptionPane.showInputDialog("Introduce o número que creas correcto"));
-                if (num2>num1) {
-                    JOptionPane.showMessageDialog(null,"O número é menor");
-                } else if(num2<num1){
-                   JOptionPane.showMessageDialog(null,"O número é maior"); 
-                }else{
-                    JOptionPane.showMessageDialog(null,"ADIVINASTE"); 
-                }
-                numIntentos=-1;
-        } while (num2!=num1||numIntentos!=0);
+            num2 = Integer.parseInt(JOptionPane.showInputDialog("Introduce o número que creas correcto"));
+            if (num2 > num1) {
+                JOptionPane.showMessageDialog(null, "O número é menor");
+            } else if (num2 < num1) {
+                JOptionPane.showMessageDialog(null, "O número é maior");
+            } else {
+                JOptionPane.showMessageDialog(null, "ADIVINASTE");
+                break;
+            }
+            numIntentos = numIntentos - 1;
+        } while (numIntentos != 0);
     }
 
 }
